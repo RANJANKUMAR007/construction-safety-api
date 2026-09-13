@@ -1,9 +1,7 @@
-# Student Name:Ranjan Kumar G
-# Degree/Branch:B.Tech (Artficial Intelligence and Machine Lerning)
-# College:Saveetha Engineering College
-
+# Student Name: Ranjan Kumar G
+# Degree/Branch: B.Tech Artificial Inteliigence and Machine Learning
+# College: Saveetha Engineering College
 # Construction Site Safety — Detection & Reasoning API
-
 An RT-DETR object detector fine-tuned on a construction-site PPE (personal protective equipment) dataset, exposed through two FastAPI endpoints: raw detection (`/detect`) and a hand-written natural-language reasoning layer (`/ask`) that reports compliance status and refuses to guess when detection confidence is too low.
 
 See [`MEMO.md`](./MEMO.md) for the full write-up: dataset justification, evaluation analysis, five real failure cases, and reasoning-layer design decisions.
@@ -124,11 +122,18 @@ curl -X POST "http://127.0.0.1:8000/detect" \
   "detections": [
     {"class": "Safety Vest", "confidence": 0.9046, "bbox": [1295.85, 338.12, 1709.21, 770.97]},
     {"class": "NO-Hardhat", "confidence": 0.8947, "bbox": [1474.04, 214.27, 1648.88, 309.78]},
-    {"class": "Person", "confidence": 0.8793, "bbox": [1277.98, 206.89, 1919.06, 813.32]}
+    {"class": "Safety Vest", "confidence": 0.8804, "bbox": [179.35, 420.13, 303.92, 620.79]},
+    {"class": "Person", "confidence": 0.8793, "bbox": [1277.98, 206.89, 1919.06, 813.32]},
+    {"class": "Safety Vest", "confidence": 0.8704, "bbox": [725.79, 449.88, 826.65, 574.47]},
+    {"class": "NO-Mask", "confidence": 0.8557, "bbox": [1546.00, 330.39, 1643.48, 395.09]},
+    {"class": "Person", "confidence": 0.8344, "bbox": [701.77, 380.56, 843.76, 674.51]},
+    {"class": "NO-Hardhat", "confidence": 0.8003, "bbox": [233.40, 350.62, 293.95, 378.48]},
+    {"class": "Person", "confidence": 0.7903, "bbox": [156.09, 349.48, 312.29, 777.97]},
+    {"class": "NO-Mask", "confidence": 0.4982, "bbox": [249.46, 400.24, 277.58, 419.14]},
+    {"class": "NO-Mask", "confidence": 0.3917, "bbox": [735.48, 439.46, 751.66, 463.50]}
   ]
 }
 ```
-*(truncated for brevity — full response returns all 11 detections)*
 
 ### Sample request/response — `POST /ask`
 
