@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+test_reasoning_manual.py
+training/
+evaluation/
+*.ipynb
